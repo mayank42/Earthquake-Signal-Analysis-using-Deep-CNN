@@ -150,6 +150,27 @@ print('Done.')
 
 ########################################################
 
+#Plotting accuracy
+
+def soft_accuracy(pred,y_test):
+    acc = []
+    for e in np.linspace(0,1,10):
+        acc.append(sum([True for i in range(len(pred))  if pred[i] in [int(y_test[i]),int(y_test[i]+e),int(y_test[i]-e)]]))
+    acc = np.array(acc)
+    return acc*100.0/len(pred)
+print('Generating accuracy plot...',end='')
+pred = []
+for i in x_test:
+    pred.append(np.argmax(model.predict(np.array([i]))))
+plt.figure(figsize=(10,10))
+plt.plot(np.linspace(0,1,10),soft_accuracy(pred,y_test))
+plt.grid()
+plt.xlabel('Soft margin')
+plt.ylabel('Percentage Model Accuracy')
+plt.tight_layout()
+plt.title('Accuracy vs Margin plot')
+plt.savefig('accuracy_plot.png')
+print('Done.')
 
 ########################################################
 
