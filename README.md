@@ -3,6 +3,8 @@ This project explores the possibility of earthquake magnitude prediction based o
 
 ### Data Description
 
+The data has been taken from [Pesmos Lab, IIT Roorkee](pesmos.in) EEWS data repository.
+
 The following image is a typical earthquake signal and illustrates the data we are gonna deal with.
 ![alt text](https://github.com/mayank42/Earthquake-Signal-Analysis-using-Deep-CNN/blob/master/Data%20Description/vt_signal.png)
 
